@@ -1,0 +1,81 @@
+{
+  "canisters": {
+    "indexer_mainnet": {
+      "candid": "src/indexer/indexer.did",
+      "package": "indexer",
+      "type": "rust",
+      "declarations": {
+        "node_compatibility": true
+      }
+    },
+    "indexer_optimism": {
+      "candid": "src/indexer/indexer.did",
+      "package": "indexer",
+      "type": "rust",
+      "declarations": {
+        "node_compatibility": true
+      }
+    },
+    "mapping_mainnet": {
+      "candid": "src/mapping/mapping.did",
+      "package": "mapping",
+      "type": "rust",
+      "dependencies": ["indexer_mainnet"],
+      "declarations": {
+        "node_compatibility": true
+      }
+    },
+    "mapping_optimism": {
+      "candid": "src/mapping/mapping.did",
+      "package": "mapping",
+      "type": "rust",
+      "dependencies": ["indexer_optimism"],
+      "declarations": {
+        "node_compatibility": true
+      }
+    },
+    "hhi": {
+      "candid": "src/hhi/hhi.did",
+      "package": "hhi",
+      "type": "rust",
+      "dependencies": ["mapping_mainnet", "mapping_optimism"],
+      "declarations": {
+        "node_compatibility": true
+      }
+    },
+    "hhi_snapshot": {
+      "candid": "src/hhi_snapshot/hhi_snapshot.did",
+      "package": "hhi_snapshot",
+      "type": "rust",
+      "dependencies": ["hhi"],
+      "declarations": {
+        "node_compatibility": true
+      }
+    },
+    "relayer": {
+      "candid": "src/relayer/relayer.did",
+      "package": "relayer",
+      "type": "rust",
+      "declarations": {
+        "node_compatibility": true
+      },
+      "dependencies": ["hhi"]
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "networks": {
+    "local": {
+      "type": "ephemeral"
+    },
+    "mainnet": {
+      "providers": ["https://icp0.io"],
+      "wallet": "un5zb-naaaa-aaaap-qbbla-cai"
+    }
+  },
+  "version": 1
+}

@@ -1,0 +1,25 @@
+{
+  "name": "update_indexer_events",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@dfinity/agent": "^0.15.5",
+    "@dfinity/candid": "^0.15.5",
+    "@dfinity/principal": "^0.15.5",
+    "@ethersproject/providers": "^5.7.2",
+    "ethers": "^6.3.0",
+    "node-fetch": "2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@typechain/ethers-v6": "^0.3.0",
+    "@types/node": "^20.2.5",
+    "@types/node-fetch": "2",
+    "typechain": "^8.1.1",
+    "typechain-target-ethers-v5": "^5.0.1"
+  },
+  "scripts": {
+    "gen": "typechain --target ethers-v6 abis/*"
+  }
+}
