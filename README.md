@@ -54,6 +54,7 @@ It calls [Oracle Contract](oracle/contracts/OracleV1.sol) in other chains to put
 ## HHI(Herfindahl-Hirschman Index)
 
 The Herfindahl-Hirschman Index (HHI) is a measure of market concentration and competition among market participants. The HHI is calculated by squaring the market share of each firm competing in the market and then summing the resulting numbers. For example, for a market consisting of four firms with shares of 30, 30, 20, and 20 percent, the HHI is 2,600 (30^2 + 30^2 + 20^2 + 20^2 = 2,600). The HHI takes into account the relative size distribution of the firms in a market and approaches zero when a market consists of a large number of firms of relatively equal size. The HHI increases both as the number of firms in the market decreases and as the disparity in size between those firms increases.
+  
 $$ HHI = \sum_{i=1}^{n} s_i^2 $$
 
 ## More information
